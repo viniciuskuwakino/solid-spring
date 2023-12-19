@@ -38,4 +38,15 @@ public class Abrigo {
     public Pet[] getPets() {
         return pets;
     }
+
+    public void setId(long l) {
+        this.id = l;
+    }
+
+    @Override
+    public String toString() {
+        return """
+               "id":%s,"nome":"%s","telefone":"%s","email":"%s"
+               """.formatted(this.id, this.nome, this.telefone, this.email);
+    }
 }

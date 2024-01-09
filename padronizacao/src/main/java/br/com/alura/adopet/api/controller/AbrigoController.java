@@ -3,6 +3,8 @@ package br.com.alura.adopet.api.controller;
 import br.com.alura.adopet.api.model.Abrigo;
 import br.com.alura.adopet.api.model.Pet;
 import br.com.alura.adopet.api.repository.AbrigoRepository;
+import br.com.alura.adopet.api.service.AbrigoService;
+import br.com.alura.adopet.api.service.PetService;
 import jakarta.persistence.EntityNotFoundException;
 import jakarta.validation.Valid;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -15,6 +17,12 @@ import java.util.List;
 @RestController
 @RequestMapping("/abrigos")
 public class AbrigoController {
+
+    @Autowired
+    private AbrigoService abrigoService;
+
+    @Autowired
+    private PetService petService;
 
     @Autowired
     private AbrigoRepository repository;
